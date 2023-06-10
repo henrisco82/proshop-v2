@@ -4,8 +4,8 @@ import multer from 'multer';
 const router = express.Router();
 
 // If production, use Render server's data folder, else use local uploads folder
-const uploadFolder = 'uploads/';
-  // process.env.NODE_ENV === 'production' ? '/var/data/uploads/' : 'uploads/';
+const uploadFolder =
+  process.env.NODE_ENV === 'production' ? '/var/data/uploads/' : 'uploads/';
 
 const storage = multer.diskStorage({
   destination(req, file, cb) {
